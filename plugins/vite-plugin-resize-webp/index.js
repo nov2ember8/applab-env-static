@@ -101,7 +101,6 @@ const resizeWebp = (options = {}) => {
       });
     },
     async buildStart() {
-      console.log(this)
       if(!this.meta.watchMode) {
         deleteFilesInDirectory(outputDir);
       }
