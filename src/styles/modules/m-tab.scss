@@ -1,0 +1,10 @@
+
+.m-tab {
+  &__panel {
+    overflow: hidden;
+  
+    &[aria-hidden=true] {
+      height: 0;
+    }
+  }
+}

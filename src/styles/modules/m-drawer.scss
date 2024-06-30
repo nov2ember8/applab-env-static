@@ -1,0 +1,119 @@
+.m-drawer {
+  
+  &__button {
+    $this: &;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    z-index: 32;
+
+    > span {
+      display: block;
+      width: 32px;
+      height: 2px;
+      background-color: #000;
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      transition: all 300ms ease;
+
+      &:nth-child(1) {
+      }
+      &:nth-child(2) {
+        translate: 0 -8px;
+      }
+      &:nth-child(3) {
+        translate: 0 8px;
+      }
+    }
+
+    &[aria-expanded="true"] > span {
+      &:nth-child(1) {
+        width: 0;
+      }
+      &:nth-child(2) {
+        translate: 0;
+        rotate: 45deg;
+      }
+      &:nth-child(3) {
+        translate: 0;
+        rotate: -45deg;
+      }
+    }
+  }
+
+  &__panel {
+    display: grid;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transition: all 500ms ease-out;
+    z-index: 31;
+
+    // フェードして出てくる
+    &.-fade {
+      opacity: 0;
+      visibility: hidden;
+
+      &[aria-hidden="false"] {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    // 右から左へ出てくる
+    &.-rtl {
+      left: auto;
+      right: 0;
+      translate: 100% 0px;
+
+      &[aria-hidden="false"] {
+        translate: 0% 0px;
+      }
+    }
+
+    // 左から右へ出てくる
+    &.-ltr {
+      left: 0;
+      translate: -100% 0px;
+
+      &[aria-hidden="false"] {
+        translate: 0% 0px;
+      }
+    }
+    
+    // 左から右へ出てくる
+    &.-ttb {
+      position: absolute;
+      top: 0;
+      translate: 0 -100%;
+
+      &[aria-hidden="false"] {
+        translate: 0px 0px;
+      }
+    }
+  }
+
+  &__panel-inner {
+    overflow: hidden;
+  }
+  &__overlay {
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 30;
+    transition: visibility 500ms, opacity 500ms ease-out;
+    backdrop-filter: blur(10px);
+
+    &[aria-expanded="true"] {
+      visibility: visible;
+      opacity: 0.67;
+    }
+  }
+}

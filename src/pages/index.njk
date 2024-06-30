@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/src/styles/main.scss">
+  <script src="/src/scripts/main.js" type="module"></script>
+  
+</head>
+<body>
+  <div aria-expanded="false" aria-label="" aria-controls="drawer-panel" class="m-drawer__overlay"></div>
+  <header>
+    <div class="container">
+      <div class="flex h-[80px]">
+        <div class="hidden md:flex w-[200px] h-full flex items-center">logo</div>
+        <div class="hidden md:flex grow h-full justify-end">
+          <ul class="flex h-full items-center gap-4">
+            <li>
+              <a href="#">link</a>
+            </li>
+            <li>
+              <a href="#">link</a>
+            </li>
+          </ul>
+        </div>
+        <div class="md:hidden absolute z right-0 top-0 mt-4 mr-4"><button aria-haspopup="menu" aria-expanded="false" aria-label="メニューを開く" aria-controls="drawer-panel" class="m-drawer__button"><span></span><span></span><span></span></button></div>
+      </div>
+    </div>
+    <div id="drawer-panel" role="dialog"  aria-hidden="true" class="m-drawer__panel -fade bg-gray-300 p-4">
+      <div class="m-drawer__panel-inner flex flex-col">
+        <div class="flex justify-center items-center h-[80px]">logo</div>
+        <div class="grow mt-4 mb-4">
+          <ul>
+            <li>
+              <a href="#">link</a>
+            </li>
+            <li>
+              <a href="#">link</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <button aria-haspopup="menu" aria-expanded="false" aria-label="メニューを開く" aria-controls="drawer-panel" class="border-[1px] px-8 py-2 block mx-auto rounded-md border-black"><span>閉じる</span></button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <h1 class="text-3xl">サンプルページ</h1>
+    </div>
+    <section class="mt-8">
+      <div class="container">
+        <h2 class="text-2xl">タブの実装</h2>
+        <p class="mb-4">.m-tab__listのaria-controls属性と.m-tab__panelのid属性を一致させます。</p>
+        <div class="m-tab">
+          <ul role="tablist" class="m-tab__list flex ml-2 gap-1">
+            <li role="tab" aria-selected="true" aria-controls="panel1" tabindex="0" class="border border-b-0 border-gray-500 px-2 py-1 rounded-md rounded-b-none [&[aria-selected=true]]:font-bold [&[aria-selected=true]]:bg-gray-300">
+              タブ1
+            </li>
+            <li role="tab" aria-selected="false" aria-controls="panel2" tabindex="0" class="border border-b-0 border-gray-500 px-2 py-1 rounded-md rounded-b-none [&[aria-selected=true]]:font-bold [&[aria-selected=true]]:bg-gray-300">
+              タブ2
+            </li>
+            <li role="tab" aria-selected="false" aria-controls="panel3" tabindex="0" class="border border-b-0 border-gray-500 px-2 py-1 rounded-md rounded-b-none [&[aria-selected=true]]:font-bold [&[aria-selected=true]]:bg-gray-300">
+              タブ3
+            </li>
+          </ul>
+          <div class="m-tab__panels border py-2 px-4 border-gray-500 rounded-md">
+            <div id="panel1" aria-hidden="false" class="m-tab__panel">タブパネル1</div>
+            <div id="panel2" aria-hidden="true" class="m-tab__panel">タブパネル2</div>
+            <div id="panel3" aria-hidden="true" class="m-tab__panel">タブパネル3</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-8">
+      <div class="container">
+        <h2 class="text-2xl">アコーディオンの実装</h2>
+        <p class="mb-4">m-accordion__buttonのaria-controls属性とm-accordion__panelのid属性を一致させます。</p>
+
+        <div class="m-accordion mt-4">
+          <button aria-expanded="true" aria-label="開く" aria-controls="acc-01" class="m-accordion__button border border-gray-500 py-2 px-4 rounded-md w-full text-left flex justify-between items-center hover:bg-gray-300">
+            <span>アコーディオン１</span>
+            <span class="m-accordion__state -plus"></span>
+          </button>
+          <div id="acc-01" aria-hidden="false" class="m-accordion__panel">
+            <div class="m-accordion__panel-inner">
+              <div class="py-2 px-4 bg-gray-300">
+                アコーディオンパネル
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="m-accordion mt-4">
+          <button aria-expanded="false" aria-label="開く" aria-controls="acc-02" class="m-accordion__button border border-gray-500 py-2 px-4 rounded-md w-full text-left flex justify-between items-center hover:bg-gray-300">
+            <span>アコーディオン２</span>
+            <span class="m-accordion__state -plus"></span>
+          </button>
+          <div id="acc-02" aria-hidden="true" class="m-accordion__panel">
+            <div class="m-accordion__panel-inner">
+              <div class="py-2 px-4 bg-gray-300">
+                アコーディオンパネル
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="m-accordion mt-4">
+          <button aria-expanded="false" aria-label="開く" aria-controls="acc-03" class="m-accordion__button border border-gray-500 py-2 px-4 rounded-md w-full text-left flex justify-between items-center hover:bg-gray-300">
+            <span>アコーディオン３</span>
+            <span class="m-accordion__state -plus"></span>
+          </button>
+          <div id="acc-03" aria-hidden="true" class="m-accordion__panel">
+            <div class="m-accordion__panel-inner">
+              <div class="py-2 px-4 bg-gray-300">
+                アコーディオンパネル
+              </div>
+            </div>
+          </div>
+
+        <div class="m-accordion mt-4">
+          <button aria-expanded="true" aria-label="開く" aria-controls="acc-04" class="m-accordion__button border border-gray-500 py-2 px-4 rounded-md w-full text-left flex justify-between items-center hover:bg-gray-300">
+            <span>アコーディオン４</span>
+            <span class="m-accordion__state -gt"></span>
+          </button>
+          <div id="acc-04" aria-hidden="false" class="m-accordion__panel">
+            <div class="m-accordion__panel-inner">
+              <div class="py-2 px-4 bg-gray-300">
+                アコーディオンパネル
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="m-accordion mt-4">
+          <button aria-expanded="false" aria-label="開く" aria-controls="acc-05" class="m-accordion__button border border-gray-500 py-2 px-4 rounded-md w-full text-left flex justify-between items-center hover:bg-gray-300">
+            <span>アコーディオン３</span>
+            <span class="m-accordion__state -gt"></span>
+          </button>
+          <div id="acc-05" aria-hidden="true" class="m-accordion__panel">
+            <div class="m-accordion__panel-inner">
+              <div class="py-2 px-4 bg-gray-300">
+                アコーディオンパネル
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="m-accordion mt-4">
+          <button aria-expanded="false" aria-label="開く" aria-controls="acc-06" class="m-accordion__button border border-gray-500 py-2 px-4 rounded-md w-full text-left flex justify-between items-center hover:bg-gray-300">
+            <span>アコーディオン３</span>
+            <span class="m-accordion__state -gt"></span>
+          </button>
+          <div id="acc-06" aria-hidden="true" class="m-accordion__panel">
+            <div class="m-accordion__panel-inner">
+              <div class="py-2 px-4 bg-gray-300">
+                アコーディオンパネル
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  
+</body>
+</html>

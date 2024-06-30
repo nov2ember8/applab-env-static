@@ -1,0 +1,78 @@
+.m-accordion {
+  $this: &;
+
+  &__button {
+    $button: &;
+
+    #{$this}__state {
+      width: 2em;
+      height: 2em;
+      position: relative;
+
+      &.-plus {
+        &::before,
+        &::after {
+          position: absolute;
+          inset: 0;
+          margin: auto;
+          content: "";
+          display: block;
+          width: 1em;
+          height: 2px;
+          background-color: #000;
+          transition: all 300ms ease-out;
+        }
+      }
+
+      &.-gt {
+        &::before {
+          position: absolute;
+          inset: 0;
+          margin: auto;
+          display: block;
+          content: "";
+          width: 1em;
+          height: 1em;
+          border-top: 2px solid #000;
+          border-right: 2px solid #000;
+          rotate: -45deg;
+          translate: 0 0.25em;
+          transition: all 300ms ease-out;
+        }
+      }
+    }
+
+    &[aria-expanded=false] {
+      #{$this}__state {
+        &.-plus {
+          &::before {
+            rotate: 90deg;
+          }
+        }
+
+        &.-gt {
+          &::before {
+            rotate: 135deg;
+            translate: 0 -0.25em;
+          }
+        }
+      }
+    }
+  }
+
+  &__panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 300ms ease-out;
+
+    &[aria-hidden=false] {
+      grid-template-rows: 1fr;
+    }
+  }
+
+  &__panel-inner {
+    overflow: hidden;
+  }
+
+
+}
