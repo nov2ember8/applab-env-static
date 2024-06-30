@@ -3,12 +3,23 @@
   &__list > li {
     cursor: pointer;
   }
-  
+
   &__panel {
     overflow: hidden;
   
     &[aria-hidden=true] {
       height: 0;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    &[aria-hidden=false] {
+      height: auto;
+      visibility: visible;
+      opacity: 1;
+      transition:
+        visibility 300ms ease-out
+        , opacity 300ms ease-out;
     }
   }
 }
