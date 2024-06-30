@@ -24,24 +24,26 @@
             </li>
           </ul>
         </div>
-        <div class="md:hidden absolute z right-0 top-0 mt-4 mr-4"><button aria-haspopup="menu" aria-expanded="false" aria-label="メニューを開く" aria-controls="drawer-panel" class="m-drawer__button"><span></span><span></span><span></span></button></div>
+        <div class="absolute z right-0 top-0 mt-4 mr-4"><button aria-haspopup="menu" aria-expanded="false" aria-label="メニューを開く" aria-controls="drawer-panel" class="m-drawer__button"><span></span><span></span><span></span></button></div>
       </div>
     </div>
-    <div id="drawer-panel" role="dialog"  aria-hidden="true" class="m-drawer__panel -fade bg-gray-300 p-4">
-      <div class="m-drawer__panel-inner flex flex-col">
-        <div class="flex justify-center items-center h-[80px]">logo</div>
-        <div class="grow mt-4 mb-4">
-          <ul>
-            <li>
-              <a href="#">link</a>
-            </li>
-            <li>
-              <a href="#">link</a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <button aria-haspopup="menu" aria-expanded="false" aria-label="メニューを開く" aria-controls="drawer-panel" class="border-[1px] px-8 py-2 block mx-auto rounded-md border-black"><span>閉じる</span></button>
+    <div id="drawer-panel" role="dialog"  aria-hidden="true" class="m-drawer__panel -fade bg-gray-300">
+      <div class="container h-full">
+        <div class="m-drawer__panel-inner flex flex-col h-full pb-8">
+          <div class="flex justify-center items-center h-[80px]">logo</div>
+          <div class="grow mt-4 mb-4">
+            <ul>
+              <li>
+                <a href="#">link</a>
+              </li>
+              <li>
+                <a href="#">link</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <button aria-haspopup="menu" aria-expanded="false" aria-label="メニューを開く" aria-controls="drawer-panel" class="border-[1px] px-8 py-2 block mx-auto rounded-md border-black"><span>閉じる</span></button>
+          </div>
         </div>
       </div>
     </div>
@@ -165,7 +167,37 @@
 
       </div>
     </section>
+
+    <section class="mt-8">
+      <div class="container">
+        <h2 class="text-2xl">GSAPの実装</h2>
+        <div class="mt-4">
+          <div class="gsap-test w-10 h-10 bg-black"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-8">
+      <div class="container">  
+        <h2 class="text-2xl">splideの実装</h2>
+        <div class="splide mt-4" aria-label="Splide Basic HTML Example">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide aspect-video bg-gray-400 grid place-items-center">Slide 01</li>
+              <li class="splide__slide aspect-video bg-gray-400 grid place-items-center">Slide 02</li>
+              <li class="splide__slide aspect-video bg-gray-400 grid place-items-center">Slide 03</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="container">
+      <p><small>©︎Copyright</small></p>
+    </div>
+  </footer>
   
 </body>
 </html>

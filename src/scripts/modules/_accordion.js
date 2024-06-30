@@ -4,7 +4,6 @@ window.addEventListener("DOMContentLoaded", evt => {
   const accordionPanels = document.querySelectorAll('.m-accordion__panel');
   console.log(accordionPanels);
   if(accordionPanels.length) {
-    console.log('test');
     accordionPanels.forEach((accordion)=>{
       const accordionAria = new AriaModal(accordion, {
         expandedLabel: "閉じる",

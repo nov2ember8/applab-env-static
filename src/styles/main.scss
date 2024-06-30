@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 
+@import "@splidejs/splide/css";
 @import "./modules/m-drawer";
 @import "./modules/m-tab";
 @import "./modules/m-accordion";
