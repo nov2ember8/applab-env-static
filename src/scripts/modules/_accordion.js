@@ -1,6 +1,6 @@
 import { AriaModal } from "../library/_aria";
 
-window.addEventListener("DOMContentLoaded", evt => {
+window.addEventListener("DOMContentLoaded", () => {
   const accordionPanels = document.querySelectorAll('.m-accordion__panel');
   if(accordionPanels.length) {
     accordionPanels.forEach((accordion)=>{

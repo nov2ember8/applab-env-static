@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', () => {
   if(!appear) return;
 
   const scrollEvent = new ScrollEvent();
-  scrollEvent.enqueue((args)=>{
+  scrollEvent.enqueue(()=>{
     if(scrollEvent.prop.nowY > threshold) {
       appear.classList.add(className);
     } else {

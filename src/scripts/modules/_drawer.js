@@ -1,7 +1,7 @@
 import {AriaModal} from "../library/_aria"
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
-window.addEventListener("DOMContentLoaded", evt => {
+window.addEventListener("DOMContentLoaded", () => {
   const drawerPanel = document.querySelector("#drawer-panel");
   if (drawerPanel) {
     const drawerAria = new AriaModal(drawerPanel, {

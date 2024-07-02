@@ -91,7 +91,7 @@ export class AriaModal {
       // 指定されたイベントでの処理
       button.addEventListener(
         eventType,
-        evt => {
+        () => {
           if (this.target.getAttribute("aria-hidden") == "true") {
             initiator = button;
             this.expand(expandCallback);
@@ -126,7 +126,7 @@ export class AriaModal {
     if (this.target.getAttribute("role") === "listbox") {
       const options = this.target.querySelectorAll('[role="option"]');
       options.forEach((option, index) => {
-        option.addEventListener("click", evt => {
+        option.addEventListener("click", () => {
           options.forEach(item => {
             if (item != option) {
               item.removeAttribute("aria-selected");
@@ -176,7 +176,7 @@ export class AriaModal {
     this.buttons.forEach(elem => {
       elem.setAttribute("tabindex", 0);
     });
-    this.target.querySelectorAll(focusableSelector).forEach((elem, index) => {
+    this.target.querySelectorAll(focusableSelector).forEach((elem) => {
       elem.setAttribute("tabIndex", 0);
       if (elem.getAttribute("aria-selected") === "true") elem.focus();
     });
@@ -228,9 +228,9 @@ export class AriaTab {
    * @param {Function} activateCallback タブが活性化したときに実行する関数 第一引数に{id, tab, tabpanel}を持つ
    * @param {Function} disactivateCallback タブが非活性化したときに実行する関数 第一引数に{id, tab, tabpanel}を持つ
    */
-  select(id, state, activateCallback, disactivateCallback) {
+  select(id, activateCallback, disactivateCallback) {
     this.tabpairs.forEach(tabpair => {
-      if (tabpair.id === id && tabpair.state === state) {
+      if (tabpair.id === id) {
         tabpair.activate(activateCallback);
       } else {
         tabpair.disactivate(disactivateCallback, {
@@ -251,10 +251,9 @@ export class AriaTab {
     this.tabpairs.forEach(tabpair => {
       tabpair.tab.addEventListener(
         eventType,
-        evt => {
+        () => {
           this.select(
             tabpair.id,
-            tabpair.state,
             activateCallback,
             disactivateCallback
           );
@@ -266,7 +265,6 @@ export class AriaTab {
         if (keygroups.includes("positive")) {
           this.select(
             tabpair.id,
-            tabpair.state,
             activateCallback,
             disactivateCallback
           );
@@ -284,18 +282,6 @@ export class AriaTab {
   hasId(id) {
     for (let tabpair of this.tabpairs) {
       if (tabpair.id === id) return true;
-    }
-    return false;
-  }
-
-  /**
-   * tabpaiersが特定のステートを持つか調べる
-   * @param {String} state
-   * @return {Boolean} 持っていればtrue
-   */
-  hasState(state) {
-    for (let tabpair of this.tabpairs) {
-      if (tabpair.state === state) return true;
     }
     return false;
   }

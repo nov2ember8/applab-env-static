@@ -68,7 +68,7 @@
       <div class="container">
         <h2 class="text-2xl">タブの実装</h2>
         <p class="mb-4">.m-tab__listのaria-controls属性と.m-tab__panelのid属性を一致させます。</p>
-        <div id="tab1" class="m-tab">
+        <div class="m-tab">
           <ul role="tablist" class="m-tab__list flex ml-2 gap-1">
             <li role="tab" aria-selected="true" aria-controls="panel1" tabindex="0" class="border border-b-0 border-gray-500 px-2 py-1 rounded-md rounded-b-none [&[aria-selected=true]]:font-bold [&[aria-selected=true]]:bg-gray-300">
               タブ1
@@ -80,11 +80,22 @@
               タブ3
             </li>
           </ul>
-          <div class="m-tab__panels border py-2 px-4 border-gray-500 rounded-md">
+          <div id="tab1" class="m-tab__panels border py-2 px-4 border-gray-500 rounded-md">
             <div id="panel1" aria-hidden="false" class="m-tab__panel">タブパネル1</div>
             <div id="panel2" aria-hidden="true" class="m-tab__panel">タブパネル2</div>
             <div id="panel3" aria-hidden="true" class="m-tab__panel">タブパネル3</div>
           </div>
+          <ul role="tablist" class="m-tab__list flex ml-2 gap-1">
+            <li role="tab" aria-selected="true" aria-controls="panel1" tabindex="0" class="border border-t-0 border-gray-500 px-2 py-1 rounded-md rounded-t-none [&[aria-selected=true]]:font-bold [&[aria-selected=true]]:bg-gray-300">
+              タブ1
+            </li>
+            <li role="tab" aria-selected="false" aria-controls="panel2" tabindex="0" class="border border-t-0 border-gray-500 px-2 py-1 rounded-md rounded-t-none [&[aria-selected=true]]:font-bold [&[aria-selected=true]]:bg-gray-300">
+              タブ2
+            </li>
+            <li role="tab" aria-selected="false" aria-controls="panel3" tabindex="0" class="border border-t-0 border-gray-500 px-2 py-1 rounded-md rounded-t-none [&[aria-selected=true]]:font-bold [&[aria-selected=true]]:bg-gray-300">
+              タブ3
+            </li>
+          </ul>
         </div>
       </div>
     </section>

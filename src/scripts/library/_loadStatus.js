@@ -18,11 +18,11 @@ export default function _loadStatus(targets) {
 
   // bodyを対象にする場合（引数なし）
   const body = document.body;
-  window.addEventListener("DOMContentLoaded", evt => {
+  window.addEventListener("DOMContentLoaded", () => {
     document.body.dataset.loadStatus = "dom";
   });
 
-  window.addEventListener("load", evt => {
+  window.addEventListener("load", () => {
     document.body.dataset.loadStatus = "load";
   });
 

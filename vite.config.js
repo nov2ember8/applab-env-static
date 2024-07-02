@@ -3,15 +3,25 @@ import nunjucks from '@vituum/vite-plugin-nunjucks'
 import tailwindcss from '@vituum/vite-plugin-tailwindcss'
 import viteImagemin from "vite-plugin-imagemin"
 import resizeWebp from './plugins/vite-plugin-resize-webp'
+import autoprefixer from 'autoprefixer'
+import eslint from 'vite-plugin-eslint'
 
 export default {
-    plugins: [
-      vituum(),
-      nunjucks({
-        root: './src'
-      }),
-      tailwindcss(),
-      resizeWebp(),
-      viteImagemin(),
-    ]
+  css: {
+    postcss: {
+      plugins: [
+        autoprefixer()
+      ]
+    }
+  },
+  plugins: [
+    vituum(),
+    nunjucks({
+      root: './src'
+    }),
+    eslint(),
+    tailwindcss(),
+    resizeWebp(),
+    viteImagemin(),
+  ]
 }
