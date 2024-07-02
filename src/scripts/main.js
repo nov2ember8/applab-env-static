@@ -3,6 +3,9 @@ import Splide from "@splidejs/splide";
 import "./modules/_drawer";
 import "./modules/_tab";
 import "./modules/_accordion";
+import "./modules/_appear";
+import loadStatus from "./library/_loadStatus";
+loadStatus();
 
 // 動作検証用、削除して構いません
 window.addEventListener('DOMContentLoaded', ()=>{

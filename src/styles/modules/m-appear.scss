@@ -1,0 +1,10 @@
+.m-appear {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 200ms ease-out;
+
+  &.is-appeared {
+    visibility: visible;
+    opacity: 1;
+  }
+}

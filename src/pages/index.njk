@@ -17,10 +17,16 @@
         <div class="hidden md:flex grow h-full justify-end">
           <ul class="flex h-full items-center gap-4">
             <li>
-              <a href="#">link</a>
+              <a href="#sect-tab">tab</a>
             </li>
             <li>
-              <a href="#">link</a>
+              <a href="#sect-accordion">accordion</a>
+            </li>
+            <li>
+              <a href="#sect-gsap">gsap</a>
+            </li>
+            <li>
+              <a href="#sect-splide">splide</a>
             </li>
           </ul>
         </div>
@@ -34,10 +40,16 @@
           <div class="grow mt-4 mb-4">
             <ul>
               <li>
-                <a href="#">link</a>
+                <a href="#sect-tab" class="block text-lg">tab</a>
               </li>
               <li>
-                <a href="#">link</a>
+                <a href="#sect-accordion" class="block text-lg">accordion</a>
+              </li>
+              <li>
+                <a href="#sect-gsap" class="block text-lg">gsap</a>
+              </li>
+              <li>
+                <a href="#sect-splide" class="block text-lg">splide</a>
               </li>
             </ul>
           </div>
@@ -52,11 +64,11 @@
     <div class="container">
       <h1 class="text-3xl">サンプルページ</h1>
     </div>
-    <section class="mt-8">
+    <section id="sect-tab" class="mt-8">
       <div class="container">
         <h2 class="text-2xl">タブの実装</h2>
         <p class="mb-4">.m-tab__listのaria-controls属性と.m-tab__panelのid属性を一致させます。</p>
-        <div class="m-tab">
+        <div id="tab1" class="m-tab">
           <ul role="tablist" class="m-tab__list flex ml-2 gap-1">
             <li role="tab" aria-selected="true" aria-controls="panel1" tabindex="0" class="border border-b-0 border-gray-500 px-2 py-1 rounded-md rounded-b-none [&[aria-selected=true]]:font-bold [&[aria-selected=true]]:bg-gray-300">
               タブ1
@@ -77,7 +89,7 @@
       </div>
     </section>
 
-    <section class="mt-8">
+    <section id="sect-accordion" class="mt-8">
       <div class="container">
         <h2 class="text-2xl">アコーディオンの実装</h2>
         <p class="mb-4">.m-accordion__buttonのaria-controls属性と.m-accordion__panelのid属性を一致させます。</p>
@@ -168,7 +180,7 @@
       </div>
     </section>
 
-    <section class="mt-8">
+    <section id="sect-gsap" class="mt-8">
       <div class="container">
         <h2 class="text-2xl">GSAPの実装</h2>
         <div class="mt-4">
@@ -177,7 +189,7 @@
       </div>
     </section>
 
-    <section class="mt-8">
+    <section id="sect-splide" class="mt-8">
       <div class="container">  
         <h2 class="text-2xl">splideの実装</h2>
         <div class="splide mt-4" aria-label="Splide Basic HTML Example">
@@ -191,11 +203,16 @@
         </div>
       </div>
     </section>
+
+    <div class="h-[1000px]"></div>
   </main>
 
-  <footer>
+  <footer class="bg-black text-white">
+    <div class="m-appear">
+      <a href="#top" class="fixed bottom-8 right-8 rounded-full w-20 h-20 bg-gray-400 grid place-items-center">pagetop</a>
+    </div>
     <div class="container">
-      <p><small>©︎Copyright</small></p>
+      <p class="text-center"><small>©︎Copyright</small></p>
     </div>
   </footer>
   

@@ -5,9 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "imagemin": "node plugins/vite-plugin-resize-webp/run.js"
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "engines": {
     "node": "22.x"

@@ -20,7 +20,7 @@
           width: 1em;
           height: 2px;
           background-color: #000;
-          transition: all 300ms ease-out;
+          transition: all 100ms ease-out;
         }
       }
 
@@ -31,13 +31,13 @@
           margin: auto;
           display: block;
           content: "";
-          width: 1em;
-          height: 1em;
+          width: 0.8em;
+          height: 0.8em;
           border-top: 2px solid #000;
           border-right: 2px solid #000;
           rotate: -45deg;
           translate: 0 0.25em;
-          transition: all 300ms ease-out;
+          transition: all 100ms ease-out;
         }
       }
     }
@@ -52,7 +52,7 @@
 
         &.-gt {
           &::before {
-            rotate: 135deg;
+            rotate: -225deg;
             translate: 0 -0.25em;
           }
         }

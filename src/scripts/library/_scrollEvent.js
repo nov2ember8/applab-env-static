@@ -12,10 +12,10 @@ export class ScrollEvent {
     this.top = [];
     this.nottop = [];
     this.prop = {
-      nowY: window.pageYOffset,
-      nowX: window.pageXOffset,
-      oldY: window.pageYOffset,
-      oldX: window.pageXOffset,
+      nowY: window.scrollY,
+      nowX: window.scrollX,
+      oldY: window.scrollY,
+      oldX: window.scrollX,
       btmY: document.body.offsetHeight - window.innerHeight
     };
     this.throttleTimer = null;

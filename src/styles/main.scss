@@ -5,6 +5,11 @@
 @import "./modules/m-drawer";
 @import "./modules/m-tab";
 @import "./modules/m-accordion";
+@import "./modules/m-appear";
+
+html {
+  scroll-behavior: smooth;
+}
 
 @tailwind utilities;
 
