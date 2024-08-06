@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  {%- set page_title = 'サンプルページ' %}
+  {%- include '_head.njk' %}
+
+</head>
+<body>
+  
+  {%- include '_header.njk' %}
+
+  <main>
+    <div class="container">
+      <h1 class="text-3xl">{{ page_title }}</h1>
+    </div>
+
+    <section id="sect-img" class="mt-8">
+      <div class="container">
+        <h2 class="text-2xl">画像の挿入</h2>
+        <div>
+          <img src="/opt/cat@1x.webp" srcset="/opt/cat@2x.webp 2x, /opt/cat@1x.webp 1x" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section id="sect-tab" class="mt-8">
+      <div class="container">
+        <h2 class="text-2xl">タブの実装</h2>
+        <p class="mb-4">.m-tab__listのaria-controls属性と.m-tab__panelのid属性を一致させます。</p>
+        <div class="m-tab">
+          <ul role="tablist" class="m-tab__list flex ml-2 gap-1">
+            <li role="tab" aria-selected="true" aria-controls="panel1" tabindex="0" class="border border-b-0 border-gray-500 px-2 py-1 rounded-md rounded-b-none [&[aria-selected=true]]:font-bold [&[aria-selected=true]]:bg-gray-300">
+              タブ1
+            </li>
+            <li role="tab" aria-selected="false" aria-controls="panel2" tabindex="0" class="border border-b-0 border-gray-500 px-2 py-1 rounded-md rounded-b-none [&[aria-selected=true]]:font-bold [&[aria-selected=true]]:bg-gray-300">
+              タブ2
+            </li>
+            <li role="tab" aria-selected="false" aria-controls="panel3" tabindex="0" class="border border-b-0 border-gray-500 px-2 py-1 rounded-md rounded-b-none [&[aria-selected=true]]:font-bold [&[aria-selected=true]]:bg-gray-300">
+              タブ3
+            </li>
+          </ul>
+          <div id="tab1" class="m-tab__panels border py-2 px-4 border-gray-500 rounded-md">
+            <div id="panel1" aria-hidden="false" class="m-tab__panel">タブパネル1</div>
+            <div id="panel2" aria-hidden="true" class="m-tab__panel">タブパネル2</div>
+            <div id="panel3" aria-hidden="true" class="m-tab__panel">タブパネル3</div>
+          </div>
+          <ul role="tablist" class="m-tab__list flex ml-2 gap-1">
+            <li role="tab" aria-selected="true" aria-controls="panel1" tabindex="0" class="border border-t-0 border-gray-500 px-2 py-1 rounded-md rounded-t-none [&[aria-selected=true]]:font-bold [&[aria-selected=true]]:bg-gray-300">
+              タブ1
+            </li>
+            <li role="tab" aria-selected="false" aria-controls="panel2" tabindex="0" class="border border-t-0 border-gray-500 px-2 py-1 rounded-md rounded-t-none [&[aria-selected=true]]:font-bold [&[aria-selected=true]]:bg-gray-300">
+              タブ2
+            </li>
+            <li role="tab" aria-selected="false" aria-controls="panel3" tabindex="0" class="border border-t-0 border-gray-500 px-2 py-1 rounded-md rounded-t-none [&[aria-selected=true]]:font-bold [&[aria-selected=true]]:bg-gray-300">
+              タブ3
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="sect-accordion" class="mt-8">
+      <div class="container">
+        <h2 class="text-2xl">アコーディオンの実装</h2>
+        <p class="mb-4">.m-accordion__buttonのaria-controls属性と.m-accordion__panelのid属性を一致させます。</p>
+
+        <div class="m-accordion mt-4">
+          <button aria-expanded="true" aria-label="開く" aria-controls="acc-01" class="m-accordion__button border border-gray-500 py-2 px-4 rounded-md w-full text-left flex justify-between items-center gap-4 hover:bg-gray-300">
+            <span>アコーディオン１</span>
+            <span class="m-accordion__state -plus"></span>
+          </button>
+          <div id="acc-01" aria-hidden="false" class="m-accordion__panel">
+            <div class="m-accordion__panel-inner">
+              <div class="py-2 px-4 bg-gray-300">
+                アコーディオンパネル
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="m-accordion mt-4">
+          <button aria-expanded="false" aria-label="開く" aria-controls="acc-02" class="m-accordion__button border border-gray-500 py-2 px-4 rounded-md w-full text-left flex justify-between items-center gap-4 hover:bg-gray-300">
+            <span>アコーディオン２</span>
+            <span class="m-accordion__state -plus"></span>
+          </button>
+          <div id="acc-02" aria-hidden="true" class="m-accordion__panel">
+            <div class="m-accordion__panel-inner">
+              <div class="py-2 px-4 bg-gray-300">
+                アコーディオンパネル
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="m-accordion mt-4">
+          <button aria-expanded="false" aria-label="開く" aria-controls="acc-03" class="m-accordion__button border border-gray-500 py-2 px-4 rounded-md w-full text-left flex justify-between items-center gap-4 hover:bg-gray-300">
+            <span>アコーディオン３</span>
+            <span class="m-accordion__state -plus"></span>
+          </button>
+          <div id="acc-03" aria-hidden="true" class="m-accordion__panel">
+            <div class="m-accordion__panel-inner">
+              <div class="py-2 px-4 bg-gray-300">
+                アコーディオンパネル
+              </div>
+            </div>
+          </div>
+
+        <div class="m-accordion mt-4">
+          <button aria-expanded="true" aria-label="開く" aria-controls="acc-04" class="m-accordion__button border border-gray-500 py-2 px-4 rounded-md w-full text-left flex justify-between items-center gap-4 hover:bg-gray-300">
+            <span>アコーディオン４</span>
+            <span class="m-accordion__state -gt"></span>
+          </button>
+          <div id="acc-04" aria-hidden="false" class="m-accordion__panel">
+            <div class="m-accordion__panel-inner">
+              <div class="py-2 px-4 bg-gray-300">
+                アコーディオンパネル
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="m-accordion mt-4">
+          <button aria-expanded="false" aria-label="開く" aria-controls="acc-05" class="m-accordion__button border border-gray-500 py-2 px-4 rounded-md w-full text-left flex justify-between items-center gap-4 hover:bg-gray-300">
+            <span>アコーディオン３</span>
+            <span class="m-accordion__state -gt"></span>
+          </button>
+          <div id="acc-05" aria-hidden="true" class="m-accordion__panel">
+            <div class="m-accordion__panel-inner">
+              <div class="py-2 px-4 bg-gray-300">
+                アコーディオンパネル
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="m-accordion mt-4">
+          <button aria-expanded="false" aria-label="開く" aria-controls="acc-06" class="m-accordion__button border border-gray-500 py-2 px-4 rounded-md w-full text-left flex justify-between items-center gap-4 hover:bg-gray-300">
+            <span>アコーディオン３</span>
+            <span class="m-accordion__state -gt"></span>
+          </button>
+          <div id="acc-06" aria-hidden="true" class="m-accordion__panel">
+            <div class="m-accordion__panel-inner">
+              <div class="py-2 px-4 bg-gray-300">
+                アコーディオンパネル
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="sect-gsap" class="mt-8">
+      <div class="container">
+        <h2 class="text-2xl">GSAPの実装</h2>
+        <div class="mt-4">
+          <div class="gsap-test w-10 h-10 bg-black"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sect-splide" class="mt-8">
+      <div class="container">  
+        <h2 class="text-2xl">splideの実装</h2>
+        <div class="splide mt-4" aria-label="Splide Basic HTML Example">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide aspect-video bg-gray-400 grid place-items-center">Slide 01</li>
+              <li class="splide__slide aspect-video bg-gray-400 grid place-items-center">Slide 02</li>
+              <li class="splide__slide aspect-video bg-gray-400 grid place-items-center">Slide 03</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  {% include '_footer.njk' %}
+</body>
+</html>
