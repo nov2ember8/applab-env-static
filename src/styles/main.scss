@@ -1,16 +1,15 @@
+/* tailwindcss */
 @tailwind base;
 @tailwind components;
 
+/* 外部コンポーネントの読み込み */
 @import "@splidejs/splide/css";
-@import "./modules/m-drawer";
-@import "./modules/m-tab";
-@import "./modules/m-accordion";
-@import "./modules/m-appear";
 
-html {
-  scroll-behavior: smooth;
-}
+/* 内部コンポーネントの読み込み */
+@import "./foundation/+.css";
+@import "./modules/+.css";
 
+/* tailwindcss */
 @tailwind utilities;
 
 

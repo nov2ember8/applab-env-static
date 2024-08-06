@@ -67,6 +67,8 @@
     &.-rtl {
       left: auto;
       right: 0;
+      width: 100%;
+      max-width: 400px;
       translate: 100% 0px;
 
       &[aria-hidden="false"] {
