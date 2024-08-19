@@ -35,10 +35,12 @@
 ### src/scripts
 
 javascriptはここに配置します。
++.jsにフォルダ内のファイルが自動的にimportされるので、それをmain.jsにimportして使ってもOKです。
 
 ### src/styles
 
 css（scss）はここに配置します。
++.cssにフォルダ内のファイルが自動的にimportされるので、それをmain.scssにimportして使ってもOKです。
 
 ## 画像の取り扱い
 
@@ -46,7 +48,16 @@ css（scss）はここに配置します。
 
 この画像をnunjucksで表示する場合、`<img src="/opt/hoge@2x.webp" alt="">` のように記述します。
 
-## splide
+# 技術スタックについて
 
+## 静的サイトジェネレータ
+ViteベースのVituumを使用しています。  
+https://vituum.dev
+
+## Nunjacks
+HTMLのメタ言語として採用しています。  
+公式ドキュメント： https://mozilla.github.io/nunjucks/templating.html
+
+## splide
 スライダーの実装に使用してください。 
 公式ドキュメントは https://ja.splidejs.com/ にあります。
