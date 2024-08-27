@@ -14,9 +14,6 @@ window.addEventListener("DOMContentLoaded", () => {
         drawerAria.shrink(enableBodyScroll);
       })
     });
-    drawerPanel.addEventListener('click', () => {
-      drawerAria.shrink(enableBodyScroll);
-    })
   }
 });
 

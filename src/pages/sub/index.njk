@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 
-  {%- set page_title = 'サンプルページ' %}
+  {%- set page_title = '下層ページ' %}
   {%- include '_head.njk' %}
 
 </head>
@@ -15,7 +15,7 @@
       <h1 class="text-3xl">{{ page_title }}</h1>
     </div>
 
-    <section id="sect-img" class="mt-8 mb-8">
+    <section id="sect-img" class="mt-8">
       <div class="container">
         <h2 class="text-2xl">画像の挿入</h2>
         <div>
@@ -24,7 +24,7 @@
       </div>
     </section>
 
-    <section id="sect-tab" class="mt-8 mb-8">
+    <section id="sect-tab" class="mt-8">
       <div class="container">
         <h2 class="text-2xl">タブの実装</h2>
         <p class="mb-4">.m-tab__listのaria-controls属性と.m-tab__panelのid属性を一致させます。</p>
@@ -60,7 +60,7 @@
       </div>
     </section>
 
-    <section id="sect-accordion" class="mt-8 mb-8">
+    <section id="sect-accordion" class="mt-8">
       <div class="container">
         <h2 class="text-2xl">アコーディオンの実装</h2>
         <p class="mb-4">.m-accordion__buttonのaria-controls属性と.m-accordion__panelのid属性を一致させます。</p>
@@ -68,7 +68,6 @@
         <div class="m-accordion mt-4">
           <button aria-expanded="true" aria-label="開く" aria-controls="acc-01" class="m-accordion__button border border-gray-500 py-2 px-4 rounded-md w-full text-left flex justify-between items-center gap-4 hover:bg-gray-300">
             <span>アコーディオン１</span>
-            {# m-accordion__stateのアイコンは -plus -gt を選択可能 #}
             <span class="m-accordion__state -plus"></span>
           </button>
           <div id="acc-01" aria-hidden="false" class="m-accordion__panel">
@@ -152,7 +151,7 @@
       </div>
     </section>
 
-    <section id="sect-gsap" class="mt-8 mb-8">
+    <section id="sect-gsap" class="mt-8">
       <div class="container">
         <h2 class="text-2xl">GSAPの実装</h2>
         <div class="mt-4">
@@ -161,7 +160,7 @@
       </div>
     </section>
 
-    <section id="sect-splide" class="mt-8 mb-8">
+    <section id="sect-splide" class="mt-8">
       <div class="container">  
         <h2 class="text-2xl">splideの実装</h2>
         <div class="splide mt-4" aria-label="Splide Basic HTML Example">

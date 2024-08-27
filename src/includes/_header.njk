@@ -1,0 +1,67 @@
+
+<div aria-expanded="false" aria-label="" aria-controls="drawer-panel" class="m-drawer__overlay"></div>
+<header>
+  <div class="container">
+    <div class="flex h-[80px]">
+      <div class="hidden md:flex w-[200px] h-full flex items-center">
+        <a href="/">toppage</a>
+      </div>
+      <div class="hidden md:flex grow h-full justify-end">
+        <ul class="flex h-full items-center gap-4">
+          <li>
+            <a href="#sect-img">img</a>
+          </li>
+          <li>
+            <a href="#sect-tab">tab</a>
+          </li>
+          <li>
+            <a href="#sect-accordion">accordion</a>
+          </li>
+          <li>
+            <a href="#sect-gsap">gsap</a>
+          </li>
+          <li>
+            <a href="#sect-splide">splide</a>
+          </li>
+          <li>
+            <a href="/sub/" class="block text-lg">sub</a>
+          </li>
+        </ul>
+      </div>
+      <div class="absolute z right-0 top-0 mt-4 mr-4"><button aria-haspopup="menu" aria-expanded="false" aria-label="メニューを開く" aria-controls="drawer-panel" class="m-drawer__button"><span></span><span></span><span></span></button></div>
+    </div>
+  </div>
+  {# m-drawer__panelの挙動 は -fade -rtl -ltr -ttb を選択可能 #}
+  <div id="drawer-panel" role="dialog"  aria-hidden="true" class="m-drawer__panel -rtl bg-gray-300">
+    <div class="container h-full">
+      <div class="m-drawer__panel-inner flex flex-col h-full pb-8">
+        <div class="flex justify-center items-center h-[80px]">logo</div>
+        <div class="grow mt-4 mb-4">
+          <ul>
+            <li>
+              <a href="#sect-img" class="block text-lg">img</a>
+            </li>
+            <li>
+              <a href="#sect-tab" class="block text-lg">tab</a>
+            </li>
+            <li>
+              <a href="#sect-accordion" class="block text-lg">accordion</a>
+            </li>
+            <li>
+              <a href="#sect-gsap" class="block text-lg">gsap</a>
+            </li>
+            <li>
+              <a href="#sect-splide" class="block text-lg">splide</a>
+            </li>
+            <li>
+              <a href="/sub/" class="block text-lg">sub</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <button aria-haspopup="menu" aria-expanded="false" aria-label="メニューを開く" aria-controls="drawer-panel" class="border-[1px] px-8 py-2 block mx-auto rounded-md border-black"><span>閉じる</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

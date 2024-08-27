@@ -17,7 +17,7 @@ export default {
   plugins: [
     vituum(),
     nunjucks({
-      root: './src'
+      root: './src/includes'
     }),
     eslint(),
     tailwindcss(),

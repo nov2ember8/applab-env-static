@@ -67,6 +67,8 @@
     &.-rtl {
       left: auto;
       right: 0;
+      width: 100%;
+      max-width: 400px;
       translate: 100% 0px;
 
       &[aria-hidden="false"] {
@@ -109,7 +111,7 @@
     opacity: 0;
     z-index: 30;
     transition: visibility 500ms, opacity 500ms ease-out;
-    backdrop-filter: blur(10px);
+    background-color: #000;
 
     &[aria-expanded="true"] {
       visibility: visible;
