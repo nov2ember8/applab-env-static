@@ -1,5 +1,6 @@
 import path from 'path';
 import sharp from 'sharp';
+import fs from 'fs';
 
 const resizeImage = async (file, outputFile) => {
   const basename = path.basename(file);
@@ -28,6 +29,8 @@ const resizeImage = async (file, outputFile) => {
     await sharp(file)
       .webp()
       .toFile(outputFile.replace(extname, '.webp'));
+  } else if (extname === '.svg') {
+    fs.copyFileSync(file, outputFile);
   } else {
     await sharp(file)
       .toFile(outputFile);
