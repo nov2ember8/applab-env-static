@@ -23,5 +23,9 @@ export default {
     tailwindcss(),
     resizeWebp(),
     viteImagemin(),
-  ]
+  ],
+  server: {
+    host: true, // ネットワークからのアクセスを許可
+    port: 3000, // または使用しているポート
+  }
 }
